@@ -187,6 +187,8 @@ local DEFLATE_CODE_LENGTH_ORDER = {
 local RGB_CHANNEL_COUNT = 3
 local RGBA_CHANNEL_COUNT = 4
 local DEFAULT_PALETTE = " .:-=+*#%@"
+
+M.default_palette = DEFAULT_PALETTE
 local WHITE_BRIGHTNESS = 255
 local ROUNDING_OFFSET = 0.5
 local RED_LUMINANCE = 0.2126
@@ -621,7 +623,7 @@ function M.render(image, output_width, output_height, palette)
 	if type(output_height) ~= "number" or output_height <= 0 or output_height % 1 ~= 0 then
 		error("Output height must be a positive integer.")
 	end
-	palette = palette or DEFAULT_PALETTE
+	palette = palette or M.default_palette
 	if type(palette) ~= "string" or #palette < 2 then
 		error("ASCII palette must contain at least two characters.")
 	end
