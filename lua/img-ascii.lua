@@ -25,6 +25,7 @@ function M.decode(image_data)
 end
 
 M.render = PngToAscii.render
+M.default_palette = PngToAscii.default_palette
 
 ---@param image_data string
 ---@param output_width number

@@ -129,6 +129,8 @@ local lines = image_to_ascii.render(image, 32, 16, " .:-=+*#%@")
 
 `render()` samples the decoded image into the requested character dimensions.
 For RGBA PNG input, transparent pixels are composited on white.
+The default palette is available as `image_to_ascii.default_palette` when you
+need to reuse or extend it.
 
 ## Development
 

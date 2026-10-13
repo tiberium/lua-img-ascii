@@ -35,6 +35,10 @@ local function decode_base64(encoded)
 end
 
 describe("image-to-ascii", function()
+	it("exports its default ASCII palette", function()
+		assert.equals(" .:-=+*#%@", ImageToAscii.default_palette)
+	end)
+
 	it("detects and decodes a baseline JPEG", function()
 		local jpeg = decode_base64(
 			"/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsN"
